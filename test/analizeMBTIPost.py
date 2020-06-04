@@ -11,7 +11,7 @@ for ligneS in fichier:
 	stopWords = set(stopwords.words('english'))
 	ligne = ligneS.split(',')
 	if len(ligne) > 1:
-		ligne[1] = ligne[1].replace("|||", "")
+		ligne[1] = ligne[1].replace("|||", " ")
 		ligne[1] = ligne[1].lower()
 		words = tokenizer.tokenize(ligne[1])
 		for w in words:
