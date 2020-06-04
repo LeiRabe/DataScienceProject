@@ -9,7 +9,10 @@ isExist = 0
 for ligne in fichiercsv:
     isExist = 0
     ligne[1] = re.sub(r"http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\), ]|(?:%[0-9a-fA-F][0-9a-fA-F]))+", "", ligne[1])
-    ligne[1].replace("||||||", "|||")
+    ligne[1] = ligne[1].replace("||||||", "|||")
+    ligne[1] = ligne[1].replace(",", " ")
+    ligne[1] = ligne[1].replace('\"', "")
+    ligne[1] = ligne[1].replace("\'", "")
     for lignecsv in listecsv:
         if lignecsv[0] == ligne[0]:
             isExist = 1
